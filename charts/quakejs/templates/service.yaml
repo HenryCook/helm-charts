@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "quakejs.fullname" . }}
+  labels:
+    {{- include "quakejs.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - port: {{ .Values.service.port }}
+      targetPort: http
+      protocol: UDP
+      name: http
+  selector:
+    {{- include "quakejs.selectorLabels" . | nindent 4 }}
