@@ -3,12 +3,12 @@ entries:
   example:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-04-12T03:07:21.8831416+01:00"
+    created: "2020-04-12T03:10:27.793809+01:00"
     description: A Helm chart for Kubernetes
     digest: f5cec07d11c7cf05f98d960521093f80dc1c5db379f60d9b1612ba891aaf8a06
     name: example
     type: application
     urls:
-    - htts://henrycook.github.io/helm-charts/example-0.1.0.tgz
+    - https://henrycook.github.io/helm-charts/example-0.1.0.tgz
     version: 0.1.0
-generated: "2020-04-12T03:07:21.8818494+01:00"
+generated: "2020-04-12T03:10:27.7930202+01:00"
