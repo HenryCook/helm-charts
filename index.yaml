@@ -3,12 +3,16 @@ entries:
   example:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-04-12T03:10:27.793809+01:00"
+    created: "2020-04-12T23:58:39.8059183+01:00"
     description: A Helm chart for Kubernetes
-    digest: f5cec07d11c7cf05f98d960521093f80dc1c5db379f60d9b1612ba891aaf8a06
+    digest: 85c164fd1b3fc5dc96fe295556aa176358a5b48898f3262071834ff8942e3610
+    home: https://henrycook.github.io
+    maintainers:
+    - email: henryjycook@gmail.com
+      name: henrycook
     name: example
     type: application
     urls:
-    - https://henrycook.github.io/helm-charts/example-0.1.0.tgz
+    - https://henrycook.github.io/helm-charts/packages/example-0.1.0.tgz
     version: 0.1.0
-generated: "2020-04-12T03:10:27.7930202+01:00"
+generated: "2020-04-12T23:58:39.8044326+01:00"
