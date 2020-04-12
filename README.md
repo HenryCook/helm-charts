@@ -7,13 +7,13 @@ Helm charts repository for an assortment of charts which **aren't** available he
 
 ## Usage
 
-To make use of this repo you will need to add it to your repositories in Helm:
+To make use of this repo we will need to add it to our repositories in Helm:
 
 ```
 helm repo add henrycook https://henrycook.github.io/helm-charts/
 ```
 
-You will then be able to search the repo, like so:
+We will then be able to search the repo, like so:
 
 ```
 helm repo search henrycook
@@ -22,9 +22,5 @@ helm repo search henrycook
 To then use a chart in the repo we can do something like so:
 
 ```
-helm install quakejs henrycook/quakejs
+helm install example henrycook/example
 ```
-
-## Development
-
-* Docker (Development)
