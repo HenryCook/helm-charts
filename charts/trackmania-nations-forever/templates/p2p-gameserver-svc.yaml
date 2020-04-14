@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "trackmania-nations-forever.fullname" . }}-p2p
+  labels:
+    {{- include "trackmania-nations-forever.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - name: {{ .Values.service.services.p2p.name }}
+      targetPort: {{ .Values.service.services.p2p.port }}
+      port: {{ .Values.service.services.p2p.port }}
+      protocol: {{ .Values.service.services.p2p.protocol }}
+  selector:
+    {{- include "trackmania-nations-forever.selectorLabels" . | nindent 4 }}

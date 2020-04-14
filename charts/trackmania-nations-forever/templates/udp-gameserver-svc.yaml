@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "trackmania-nations-forever.fullname" . }}-udp-gameserver
+  labels:
+    {{- include "trackmania-nations-forever.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.service.type }}
+  ports:
+    - name: {{ .Values.service.services.udp.name }}
+      targetPort: {{ .Values.service.services.udp.port }}
+      port: {{ .Values.service.services.udp.port }}
+      protocol: {{ .Values.service.services.udp.protocol }}
+  selector:
+    {{- include "trackmania-nations-forever.selectorLabels" . | nindent 4 }}

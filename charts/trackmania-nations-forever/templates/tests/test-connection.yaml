@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "trackmania-nations-forever.fullname" . }}-test-connection"
+  labels:
+    {{- include "trackmania-nations-forever.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test-success
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "trackmania-nations-forever.fullname" . }}-tcp-gameserver:{{ .Values.service.services.tcp.port }}']
+  restartPolicy: Never

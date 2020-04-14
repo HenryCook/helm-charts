@@ -1,0 +1,65 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "trackmania-nations-forever.fullname" . }}
+  labels:
+    {{- include "trackmania-nations-forever.labels" . | nindent 4 }}
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      {{- include "trackmania-nations-forever.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        {{- include "trackmania-nations-forever.selectorLabels" . | nindent 8 }}
+    spec:
+    {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+      serviceAccountName: {{ include "trackmania-nations-forever.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - name: {{ .Chart.Name }}
+          securityContext:
+            {{- toYaml .Values.securityContext | nindent 12 }}
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          ports:
+            - name: {{ .Values.service.services.tcp.name }}
+              containerPort: {{ .Values.service.services.tcp.port }}
+              protocol: {{ .Values.service.services.tcp.protocol }}
+            - name: {{ .Values.service.services.udp.name }}
+              containerPort: {{ .Values.service.services.udp.port }}
+              protocol: {{ .Values.service.services.udp.protocol }}
+            - name: {{ .Values.service.services.p2p.name }}
+              containerPort: {{ .Values.service.services.p2p.port }}
+              protocol: {{ .Values.service.services.p2p.protocol }}
+            - name: {{ .Values.service.services.xmlrpcRemote.name }}
+              containerPort: {{ .Values.service.services.xmlrpcRemote.port }}
+              protocol: {{ .Values.service.services.xmlrpcRemote.protocol }}
+          env:
+          {{- range $key, $value := .Values.envVars }}
+            - name: {{ $key }}
+              value: {{ $value | quote }}
+          {{- end }}
+          readinessProbe:
+            httpGet:
+              path: /
+              port: {{ .Values.service.services.tcp.port }}
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+    {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
+    {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+    {{- end }}
