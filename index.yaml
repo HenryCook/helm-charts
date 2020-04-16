@@ -1,11 +1,35 @@
 apiVersion: v1
 entries:
+  alerta:
+  - apiVersion: v2
+    appVersion: 7.4.6
+    created: "2020-04-16T02:01:32.4304769Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 8.7.3
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://charts.bitnami.com/bitnami
+      version: 7.10.10
+    description: Helm chart to deploy Alerta and it's related resources
+    digest: 046497999a2421526a38e7eae0b6fc0593b1400a906b1cd6cae0e7e25f046cfd
+    home: https://github.com/alerta/alerta
+    maintainers:
+    - email: henryjycook@gmail.com
+      name: henrycook
+    name: alerta
+    type: application
+    urls:
+    - https://henrycook.github.io/helm-charts/packages/alerta-0.1.0.tgz
+    version: 0.1.0
   example:
   - apiVersion: v2
     appVersion: 1.16.0
-    created: "2020-04-16T01:12:59.1946872Z"
+    created: "2020-04-16T02:01:32.4308583Z"
     description: A Helm chart for Kubernetes
-    digest: 85c164fd1b3fc5dc96fe295556aa176358a5b48898f3262071834ff8942e3610
+    digest: a8b29449b61a3de786ecca56bb9dea85e962ecd00bd542ea6f499ab9841e67ec
     home: https://henrycook.github.io
     maintainers:
     - email: henryjycook@gmail.com
@@ -15,4 +39,4 @@ entries:
     urls:
     - https://henrycook.github.io/helm-charts/packages/example-0.1.0.tgz
     version: 0.1.0
-generated: "2020-04-16T01:12:59.1941345Z"
+generated: "2020-04-16T02:01:32.4267866Z"
