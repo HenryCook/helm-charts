@@ -9,7 +9,7 @@ Helm charts repository for an assortment of charts which **aren't** available he
 
 ## Requirements
 
-To make use of this repository, you will need the below tools:
+To make use of this repository, we will need the below tools:
 
 * [Helm](https://helm.sh/) >= 3.0.0
 
@@ -30,7 +30,7 @@ helm search repo henrycook
 To then use a chart in the repo we can do something like so:
 
 ```
-helm install example henrycook/example
+helm install alerta henrycook/alerta
 ```
 
 ## Development
@@ -43,7 +43,7 @@ We utilise Docker for all of our tasks within the Makefile, which in turn uses o
 
 ### Packaging and Index
 
-When adding or amending charts, please ensure your package is updated along with the index. This can be done by doing the following commands:
+When adding or amending charts, please ensure the package is updated along with the index. This can be done by doing the following commands:
 
 ```
 make package
@@ -55,7 +55,7 @@ We will be prompted when raising a PR to do these things, however please just be
 
 ### Validation and Linting
 
-To check if your Helm chart is valid and passes linting, you may run:
+To check if the Helm chart is valid and passes linting, we may run:
 
 ```
 make lint

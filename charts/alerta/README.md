@@ -26,7 +26,7 @@ Alerta requires either a Postgres or MongoDB database to function, for ease of u
 To install the chart with the release name `alerta`:
 
 ```bash
-$ helm install henrycook henrycook/alerta
+$ helm install alerta henrycook/alerta
 ```
 
 The command deploys Alerta and Postgres on the Kubernetes cluster in the default configuration. The [Parameters](#parameters) section lists the parameters that can be configured during installation.
