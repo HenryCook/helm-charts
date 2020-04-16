@@ -2,7 +2,7 @@ apiVersion: v2
 name: alerta
 description: Helm chart to deploy Alerta and it's related resources
 type: application
-version: 0.1.0
+version: 0.1.1
 appVersion: 7.4.6
 home: https://github.com/alerta/alerta
 maintainers:
