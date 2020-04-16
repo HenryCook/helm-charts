@@ -10,7 +10,7 @@ help:
 	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | sort | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 
 lint: ## Run Helm lint against all charts
-	@echo "Running Helm lint against all charts"
+	@echo "Running chart-testing lint against all charts"
 	@docker run -v ${current_dir}:${current_dir} \
 	  -w ${current_dir} \
 	  quay.io/helmpack/chart-testing:${chart_testing} \

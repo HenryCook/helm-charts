@@ -51,7 +51,7 @@ make package
 make index
 ```
 
-You will be prompted when raising a PR to do these things however please be aware.
+We will be prompted when raising a PR to do these things, however please just be aware.
 
 ### Validation and Linting
 

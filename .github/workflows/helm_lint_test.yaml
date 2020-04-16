@@ -23,6 +23,11 @@ jobs:
         # Only build a kind cluster if there are chart changes to test.
         if: steps.lint.outputs.changed == 'true'
 
+        # Helm fails to find repository definition when Chart.lock exits,
+        # so this is a dirty hack to then fix once Helm handles this better.
+      - name: Remove Chart.lock
+        run: find . -type f -name 'Chart.lock' -exec rm "{}" +
+
       - name: Run chart-testing (install)
         uses: helm/chart-testing-action@v1.0.0-rc.1
         with:
