@@ -3,7 +3,30 @@ entries:
   alerta:
   - apiVersion: v2
     appVersion: 7.4.6
-    created: "2020-04-16T02:01:32.4304769Z"
+    created: "2020-04-16T21:37:41.4555464Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 8.7.3
+    - condition: mongodb.enabled
+      name: mongodb
+      repository: https://charts.bitnami.com/bitnami
+      version: 7.10.10
+    description: Helm chart to deploy Alerta and it's related resources
+    digest: 8f8fdeaafcc6b768c213eeca2d2b97fcb6ce1ebc0a8eedda49deca8e93e9498c
+    home: https://github.com/alerta/alerta
+    maintainers:
+    - email: henryjycook@gmail.com
+      name: henrycook
+    name: alerta
+    type: application
+    urls:
+    - https://henrycook.github.io/helm-charts/packages/alerta-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 7.4.6
+    created: "2020-04-16T21:37:41.4504195Z"
     dependencies:
     - condition: postgresql.enabled
       name: postgresql
@@ -39,4 +62,4 @@ entries:
     urls:
     - https://henrycook.github.io/helm-charts/packages/example-0.1.0.tgz
     version: 0.1.0
-generated: "2020-04-16T02:01:32.4267866Z"
+generated: "2020-04-16T21:37:41.4420137Z"
